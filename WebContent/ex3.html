@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var myVar1;
+var myVar2 = null;
+
+console.log(myVar1 + ":" + myVar2); // undefined : null
+console.log(typeof(myVar1) + ":" + typeof(myVar2)); // undefined : object
+
+console.log(myVar1 == myVar2);
+console.log(myVar1 === myVar2);
+ 
+
+// == 값의 등치성, 형변환자동으로(O) 타입을 바꾸면서 형변환 하지 말고 했던 타입은 그대로 가져가기
+console.log("2" == 2); //true 하나가 캐스팅 됨 string과  number비교중 -> 비교 하지 않기 대입하지 않고 한 타입으로 그대로 가져가기
+//parseInt로 바꾸듯이 하는것이 자바처럼 비슷하게 할 수 있어서 헷갈리지 않음
+console.log(true == 1);
+console.log('abc' == new String('abc'));
+
+//형변환
+console.log(true + 10); // true을 1로 평가를 해줌 답은 11
+console.log(2 + "2"); // 22 (문자열로 변환)
+console.log("2" + 2); // 22 (문자열로 변환)
+console.log('abc' + new String('abc'));  //abcabc
+
+console.log("==========================================");
+
+// === (객체의 동일성, 형변환 x)
+console.log("2" === 2); //false
+console.log(true === 1); //false
+console.log('abc' === new String('abc')); //false
+
+a = 100;
+b = 100;
+console.log(a == b); //true
+console.log(a === b); //true
+
+//추천 : 타입에 대해서는 엄격하게 코딩
+str = "5";
+console.log(parseInt(str) == 5);
+</script>
+</head>
+<body>
+	<h1>null VS undefined</h1>
+</body>
+</html>

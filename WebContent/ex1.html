@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var n = 10;
+var f = 3.14;
+var b = true;
+var s = 'Hello World';
+var c = 'H';
+var fn = function(a){
+	return a + 10;
+}
+
+var v1 = fn(10);
+var v2 = n;
+
+var o = {};
+var a = [];
+var re = /ab+1/;
+
+console.log(n + ":" + typeof(n)); //number type 객체(값)
+console.log(f + ":" + typeof(f)); //number type 객체(값)
+console.log(b + ":" + typeof(b)); //boolean type 객체(값)
+console.log(s + ":" + typeof(s)); //string type 객체(값)
+console.log(c + ":" + typeof(c)); //string type -> character type x javascript는 싱글 코테이션을 쓰는걸로 원래 자바에서는 ""사용
+console.log(fn + ":" + typeof(fn)); //함수(=1급시민)도 객체 (값)으로 봐야 된다.
+console.log(o + ":" + typeof(o)); //객체 타입
+console.log(a + ":" + typeof(a)); //배열도 객체로 봄
+console.log(re + ":" + typeof(re)); //배열도 객체로 봄
+/*
+    기본  자료형 (자바스크립트 타입은 5가지 number,boolean,function,string,object) array는 object type이고 literal을 편의상 제공 해준다. 많이 쓰니까 new Array보다 그냥 {}로만드는게 편하니까
+  number,
+  boolean,
+  string,
+  function(값으로 보는 것은 중요, 함수형프로그래밍에서....),
+  object
+  undefined (null이 들어가 있는 객체)
+ 
+   내장 객체 (리터럴이 되는 타입이 있고(o), 안되는 타입이 있다) object를 만들어내는 생성자 함수들 / 타입이 다 object
+   생성자 함수를 통해 생성되는 객체(다음 생성자 함수들은 내장되어 있음 -> 내장객체)
+   object <- Array (o),
+   object <- Object (o),
+   object <- Function (o), -> 함수를 만들수 있지만 object이다.
+   object <- Date,
+   object <- Math,
+   object <- RegExp (o),
+   object <- String (o)
+   object <- Number (o)
+   object <- Boolean (o)
+   
+   유사 객체
+  Number, String, Boolean 
+  
+  -> 다 객체라고 보고 number,string,boolean만 기본자료형이 있다.
+ */
+</script>
+</head>
+<body>
+	<h1>JavaScript Type</h1>
+</body>
+</html> 

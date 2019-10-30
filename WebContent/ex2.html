@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<script>
+var o1 = {}; 			//리터럴로 만들 수 있다.
+var o2 = new Object(); 	//생성자 함수로 만들 수 있다. 
+var d = new Date(); 	//내장 생성자 함수(내장 객체)로 생성
+var a1 = [10,20,30];	//내장 생성자 함수(내장 객체Array)로 생성
+var a2 = new Array(10,20,30);//내장 생성자 함수(내장 객체Array)로 생성
+	
+console.log(typeof(o1)); // object type
+console.log(typeof(o2)); // object type
+console.log(typeof(d)); // object type
+console.log(typeof(a1)); // object type
+console.log(typeof(a2)); // object type
+
+// 사용자 생성자 함수 -> 생성자 함수선언할 때 대문자 (객체 초기화)
+var My = function(){
+	this.a = 10;
+} 
+var m = new My(); //사용자 생성자 함수로 생성
+
+console.log(typeof(m)); // object type
+console.log(m.a); // object type
+
+//객체 확장 
+
+
+//1. 기본자료형(number,string,boolean) - 불가능
+var i = 10;
+i.s = "hello";
+console.log(i + ":" + i.s);
+
+var b = true;
+b.s = "hello";
+console.log(b+ ":" + b.s);
+
+var s = "hello";
+s.s = "world";
+console.log(s+ ":" + s.s);
+
+
+//2. function, object - 확장 가능
+var f = function(){
+};
+f.s = "hello";
+console.log(i+ ":" + f.s);
+
+var o = {};
+o.s = "hello";
+console.log(o + ":" + o.s);
+
+//3. 내장 생성자 함수(내장 객체)
+Object.s = "hello";
+console.log(Object + ":" + Object.s);
+
+Array.s = "hello";
+console.log(Array + ":" + Array.s);
+
+</script>
+</head>
+<body>
+	<h1> Type Object</h1>
+</body>
+</html>

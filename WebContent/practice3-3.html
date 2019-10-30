@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>리스트를 이용한 메뉴 만들기</title>
+<style type="text/css">
+*						{ margin:0; padding:0 }
+body					{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
+
+.tab-box{
+	width: 520px;
+	margin: 50px auto 0 auto;
+	
+}
+
+.tab-box ul{
+	list-style-type:none;
+	height:27px;
+}
+
+.tab-box ul li{
+	float: right;
+	width: 100px;
+	height: 22px;
+	border: 1px solid #999;
+	border-radius: 5px 5px 0 0;
+	background-color:#ccc;
+	margin-right: 2px;
+	padding-top: 3px;
+	text-align: center;
+	cursor: pointer;
+}
+.tab-box ul li.selected{
+	background-color: #fc6;
+}
+.tab-box div{
+	border: 1px solid #999;
+	text-align:center;
+	width:516px;
+	height:200px;
+	margin-top: -1px;
+	line-height:200px;
+}
+
+
+</style>
+<script src="tabbox5.js" type="text/javascript"></script>
+<script>
+
+//window.addEventListener("load",function(){
+//	tabBox.init();
+//});
+//여기서는 this가  {onTabClicked: ƒ, init: ƒ} init: ƒ () onTabClicked: ƒ (event) __proto__: Object
+
+//function함수객체 자체를 넘겨주지 말고 tabbox.init이라고 해서 호출하는 것이 아니므로
+
+window.addEventListener("load",tabBox.init.bind(tabBox)); // 여기서는 this가 Window {parent: Window, postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, …}
+//같게 해주기 위해 tabBox.init.bind(tabBox) 해주면 bind해주면 다시 onTabClicked을 선택하게 된다.
+
+</script>
+</head>
+<body>
+<div class="tab-box">
+	<ul>
+        <li>메뉴 5</li>
+        <li>메뉴 4</li>
+        <li>메뉴 3</li>
+        <li>메뉴 2</li>
+        <li>메뉴 1</li>
+    </ul>
+    <div>
+    	탭뷰입니다.
+    </div>
+</div>    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//1. var 사용 여부에 Scope이 영향을 받는다.
+//2. 특히, local(함수 내부)에서 var를 사용해서 변수를 정의하면 local 범위를 가진다. 
+//3. 결론은 var를 붙여서 사용하면 자바처럼 사용할 수 있다.
+var i = 5;
+var f = function(){
+	var i = 20; // var 를 붙인거는 여기에다가 local영역에만 잡기 위해서  변수에 var를 붙여서 자바처럼 사용하기
+	console.log(i); //20
+	i= i-1;
+}
+
+f();
+console.log(i); //i = 5 함수 호출이 끝났을 경우 i=5가 나와야 하는데 19가 나오는 이유는 i = 20으로 var를 붙이지 않았기 때문에 범위를 인지하지 못함 var를 붙이면 5나옴
+
+// 19가 나온 이유
+// 함수 범위가 깨져서 전역 범위가 됨
+// 여기서 var를 붙여보면
+
+</script>
+</head>
+<body>
+	<h1>변수 범위(Scope)</h1>
+</body>
+</html>

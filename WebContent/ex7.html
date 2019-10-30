@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 1. 함수 이름의 관례는 보통 소문자로 시작한다.(Java와 같음)
+
+var myFunction = function(){
+	console.log('Hello World');
+}
+// 2. 생성자 함수 이름의 관례는 보통 대문자로 시작한다.
+var MyObject = function(name, age){
+	//console.log('')
+	//생성자 함수다보니 객체 초기화 시켜주는 this를 사s용
+	//객체 파라미터 받아옴
+	this.name = name;
+	this.age = age;
+	
+}
+
+myFunction();
+var myObject1 = new MyObject("둘리",10);
+console.log(myObject1);
+
+//이런식으로도 전역객체를 불러올 수 있다. window.name 이런 방식으로
+//생성자 함수는 일반함수를 호출하는 방법으로 사용하는 것이 아니다. 일반 함수와는 다르기 때문에 관례가 다르고 함수와는 다른 
+//생성자 함수에 대해서 new를 만들어서 진짜 객체를 만들어 내는 것이 생성자 함수 이다.
+MyObject("hello",10);
+console.log(window.name + ":" + window.age);
+</script>
+</head>
+<body>
+	<h1>function 객체 정의/생성 방법</h1>
+</body>
+</html>

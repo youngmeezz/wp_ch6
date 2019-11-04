@@ -44,7 +44,7 @@ setTimeout(function(){
 
 //3. 새로운 window 자바 스크립트 실행하기(보안때문에 같은 도메인의 문서에 한해서 가능)
 setTimeout(function(){
-	var popup2 = window.open("https://www.naver.com","popup2","width=600, height=400", true);
+	var popup2 = window.open("ex17-popup.html","popup2","width=600, height=400", true);
 	
 	setTimeout(function(){
 		popup2.moveTo(100,100);
@@ -55,7 +55,6 @@ setTimeout(function(){
 	}, 4000);
 	
 }, 4000);
-
 
 console.log(str);
 </script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+// 현재시간
+var now = new Date();
+console.log(now);
+
+// 2019년 12월4일
+// month = current month -1
+var d = new Date(2019, 11, 4);
+console.log(d);
+
+// 2019/12/4 12:30:40
+var d = new Date(2019, 11, 4, 12, 30, 40);
+console.log(d);
+
+// 객체 메소드
+(function(d){
+	console.log(
+		" 년:" + d.getFullYear() + "\n" +
+		" 월:" + (d.getMonth()+1) + "\n" +
+		" 일:" + d.getDate() + "\n" +
+		" 요일:" + ["일","월","화","수","목","금","토"][d.getDay()] + "\n" +
+		" 시:" + d.getHours() + "\n" +
+		" 분:" + d.getMinutes() + "\n" +
+		" 초:" + d.getSeconds() + "\n" +
+		"밀리초:" + d.getMilliseconds() + "\n"
+	);
+})(now);
+
+
+d.setYear(2020);
+console.log(d.getFullYear());
+d.setMonth(9); // 10월
+console.log(d.getMonth()+1);
+
+
+</script>
+</head>
+
+<body>
+	<h1>Date 객체</h1>
+</body>
+</html>

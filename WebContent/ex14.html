@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var str = 'Hello World';
+for(var i = 0; i < str.length; i++){
+	console.log(str[i]);
+}
+
+//문자열 합치기(+)
+var str1 = "Hello";
+var str2 = "World";
+var str3 = str1 + str2;
+console.log(str3);
+
+var number = 5;
+var str4 = number + "5";
+console.log(str4 , ":", typeof(str4));
+
+var str5 = "boolean:" + true;
+console.log(str5);
+
+//객체 함수
+var str6 = "string1 string2 string3"; //string3시작이 16번째
+console.log(str6.length);
+
+var index = str6.indexOf('string4');
+console.log(index); // -1 : 없는 경우
+
+var index = str6.indexOf('string3');
+console.log(index);
+
+var str7 = str6.substr(index); // start ~ 끝
+console.log(str7);
+
+var str8 = str6.substr(index,3); // start, count
+console.log(str8);
+
+var str9 = str6.substring(0, 5); //start, end-1
+console.log(str9);
+
+var a = str6.split(' ');
+console.log(a);
+
+var str10 = 'abcdefg';
+var str11 = str10.split(":");
+console.log(str11);
+
+//
+// URL
+//
+
+
+//1. redirection(client side)
+//setTimeout(function(){
+//	location.href = "http://localhost:8089/mysite3";
+//}, 2000);
+
+//2. escape: 사용금지
+var url = 'http://localhost:8089/mysite?n=권"영"미';
+var url2 = escape(url); //deprecated 사용하지 X
+console.log(url2);
+
+//3. encodeURI: 전체 URL을 엔코딩 할 때 사용한다.
+// URL주소를 나타내는 앞자리 특수문자를 인코딩 하지 않음
+var url3 = encodeURI(url);
+console.log(url3);
+
+//4. encodingURIComponent : 주소를 나타내는 특수 문자도 인코딩
+var url4 = encodeURIComponent(url);
+console.log(url4)
+
+//5. encodeURIComponent 사용예1
+var url = 'http://localhost:8089/mysite3';
+var queryString = '?' +
+				  'n=' + encodeURIComponent('권"영"미') +
+				  "&e=" + encodeURIComponent('aomee0880@naver.com');
+
+var url5 = url + queryString;
+console.log(url5);
+
+
+//6. encodeURIComponent 사용예2
+var toQueryString = function(o){
+	qs = [];
+	for(key in o){
+		qs.push(key + "=" + encodeURIComponent(o[key]));
+	}
+	
+	return "?" + qs.join("&");
+}
+
+var url6 = url + toQueryString({
+	n : "권영미",
+	e : "aomee0880@naver.com"
+});
+console.log(url6);
+// jquery 통신 ajax를 통한 json 송수신
+</script>
+</head>
+<body>
+<!--
+<h1 onclick="this.innerHTML='Ooops!';">Click on this text!</h1>
+-->
+<h1>String 객체</h1>
+
+</body>
+</html>

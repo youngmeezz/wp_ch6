@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var a = [1, 'abc', true]
+for(var i = 0; i<a.length; i++){
+	console.log(a[1]);
+}
+
+a.forEach(function(element){
+	console.log(element);
+});
+
+['blue','black','red','green'].forEach(function(color){
+	document.write("<div style='width:200px; height:200px; background-color:"+
+	color +
+	"'></div>");
+});
+</script>
+</head>
+<body>
+	<h1>배열 순회</h1>
+</body>
+</html>

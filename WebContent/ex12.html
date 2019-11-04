@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//concat
+var colors = ['black','white','yellow'];
+var fruits = ['mango','banana','apple'];
+
+var test = fruits.concat(colors);
+
+console.log(test);
+
+//join 함수
+var str = fruits.join('.');
+console.log(str);
+
+// pop(stack)
+var color = colors.pop();
+console.log(color);
+console.log(colors);
+
+
+// push(stack)
+var color = colors.push('red');
+console.log(colors);
+
+// reverse
+console.log(fruits);
+fruits.reverse();
+console.log(fruits);
+
+// shift 연산자
+var numbers = [4000,5000,2000,8000,1000];
+console.log(numbers);
+numbers.shift();
+console.log(numbers);
+
+// slice 연산자
+var numbers2 = numbers.slice(0,2); //0,1 까지 2포함 x 
+console.log(numbers);
+console.log(numbers2)
+
+// splice 배열 변경 함수 -> 중앙에 있는거 삭제하고 싶을때 유용하게 쓰임
+console.log(fruits);
+var fruits2 = fruits.splice(0/*index*/, 2/*count*/);
+console.log(fruits);
+console.log(fruits2);
+
+// remove로 지우면 안되는지
+
+// prototype을 이용한 배열 확장
+//a[9] = "hello";
+//a.insert(9, "hello")
+
+// remove, insert 프로토타입을 만들어 주고 나서 삽입 삭제가 가능하게 할 수 있다.
+Array.prototype.insert = function(index, value){
+	if(value instanceof Array){
+		//var that = this;
+		value.forEach(function(element){
+			//console.log(this);
+			this.splice(index++, 0, element);
+		}.bind(this));
+	} else{
+		this.splice(index, 0, value);
+	}
+}
+
+Array.prototype.remove = function(index){
+	this.splice(index, 1);
+}	
+
+a = [1, 2, 4];
+a.insert(2, 3);
+console.log(a);
+
+a.remove(3); //4[3]번째 배열 삭제 4삭제 중
+console.log(a);
+
+a.insert(2, ['a','b','c']);
+console.log(a);
+
+</script>
+</head>
+<body>
+	<h1>배열함수</h1>
+</body>
+</html>

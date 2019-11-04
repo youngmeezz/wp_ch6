@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var employee = {
+		name: '홍길동',
+		title: '과장',
+		info: function(){
+			console.log(this.name + ":" + this.title);
+		}
+}
+
+//console.log(employee.name);
+//console.log(employee['name']);
+
+// 사용 예1
+var prop = 'name';
+console.log(employee[prop]);
+console.log(employee.name);
+
+
+// 사용 예2
+var s = 'info';
+employee[s]();
+
+// 사용 예3
+// HashTable, map(java)
+// dict(python) 자바스크립트는 별다른 자료구조가 없어서 직접 만들어야 되
+var map = {};
+
+map['one'] = 1;
+map['two'] = 2;
+map['three'] = 3;
+
+console.log(map.one);
+console.log(map['two']);
+console.log(map);
+</script>
+</head>
+<body>
+	<h1>연관(Associated Array) 배열</h1>
+</body>
+</html>

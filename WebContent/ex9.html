@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var o = {
+	name : "마이콜",
+	age : 20,
+	hasProperty: function(property){
+		return property in this;
+		
+	}
+}
+
+console.log(o.hasProperty('name'));
+console.log('name' in o);
+console.log(o.hasProperty('age'));
+console.log(o.hasProperty('email'));
+
+
+//그런데 사실은, 모든 Object들은 hasOwnProperty() 메소드를 사용할 수 있다.
+console.log(o.hasOwnProperty('name'));
+console.log(o.hasOwnProperty('age'));
+console.log(o.hasOwnProperty('email'));
+
+
+// with()잘 쓰지않는 연산자
+var o = {
+	name : "둘리",
+	age : 10,
+	info: function(){
+		console.log(this.name + ":" + this.age);
+	},
+	info2: function(){
+		with(this){
+		console.log(name + ":" + age);
+		}
+	},
+	info3: function(){
+		for(var prop in this){
+			//prop = "age";
+			//함수인것까지 값으로 출력되니까 함수인것 제외 in를 for로 쓰면 true/false리턴중
+			if( typeof(this[prop]) != "function"){
+			console.log(prop + ":" + this[prop]);
+			}
+		}
+	}
+}
+console.log(o.name);
+console.log(o["name"]);
+
+o.info();
+o.info2();
+o.info3();
+</script>
+</head>
+<body>
+	<h1>JavaScript 연산자(in,with)</h1>
+</body>
+</html>

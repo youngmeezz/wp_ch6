@@ -1,4 +1,4 @@
-var tabBox ={
+var tabBox = {
 		onTabClicked  : function(event){
 			var lisSelected = document.getElementsByClassName("selected");
 			//unselected

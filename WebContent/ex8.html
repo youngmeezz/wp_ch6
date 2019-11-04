@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var Rect = function(x1,y1,x2,y2,bg){
+	this.x1 = x1;
+	this.y1 = y1;
+	this.x2 = x2;
+	this.y2 = y2;
+	this.bg = bg;
+}
+
+Rect.prototype.draw = function(){
+	var width = this.x2 - this.x1;
+	var height = this.y2 - this.y1;
+	console.log(width+ ":" + height);
+	document.write(
+	'<div style="position:absolute;' + 
+	'left:'+ this.x1 + 'px;' +
+	'top:' + this.y1 +'px; ' +
+	'width:' + width +'px;' +
+	'height:' + height +'px;' +
+	'background-color:' + this.bg + '"></div>');
+}
+var r1 = new Rect(10,10,50,50,"#f00");
+var r2 = new Rect(20,20,300,200,"#00f");
+
+r1.draw();
+r2.draw();
+
+String.prototype.l = function(){
+	return this.length;
+}
+
+var str = "hello";
+console.log(str.l()); //길이 length 구하는 함수 l을 확장
+</script>
+</head>
+<body>
+	<div style="position:absolute; left:100px; top:100px; width:40px; height:40px; background-color:#f00"></div>
+</body>
+</html>

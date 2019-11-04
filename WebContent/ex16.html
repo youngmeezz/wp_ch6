@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 함수 객체 생성 1 - 비추천
+function f1(a, b){
+	return a + b;	
+}
+
+console.log(f1(10, 20));
+
+// 함수 객체 생성 2 - 추천:일관성
+var f3 = new Function("a","b","var sum = a + b; return sum;");
+console.log(f3(10,20));
+
+//함수 객체 생성 3 - 생성함수 Function()을 사용하는 방식
+var f2 = function(a, b){
+	return a + b;
+}
+var sum = f2(10,20);
+console.log(sum);
+
+//익명(Anonymous) 함수
+var sum = (function(a,b){
+	return a+b;
+})(10,20);
+console.log(sum);
+
+var f = function(arg1, arg2, arg3){
+	console.log(arg1);
+	console.log(arg2);
+	arg3();
+}
+
+f(10, {
+	name : "둘리",
+	age : 10
+}, function(){
+	console.log('Hello')
+});
+
+//가변 파라미터
+var sum1 = function(){
+	for(var i = 0; i < arguments.length; i++){
+		sum += arguments[i];
+	}
+	return sum;
+}
+
+var sum2 = function(){
+	var sum = 0;
+	Array.prototype.forEach.call(arguments, function(n){
+		sum += n;
+	});
+	return sum;
+}
+
+// arguments는 Array Object가 아니다.
+// 에러가 남.
+var sum3 = function(){
+	console.log(typeof(arguments)); //Object가나옴 배열이 아니라서..
+	var sum = 0;
+	arguments.forEach(function(n){
+		sum += n;
+	});
+	return sum;
+}
+
+var test = function(){
+	var args = {
+			0: 1000,
+			1: 2000,
+			2: 3000,
+			length: 3
+	}
+	
+	//에러
+	// args.forEach(function(n){
+	// console.log(n);
+	//});
+	
+	Array.prototype.forEach.call(args, function(n){
+		console.log(n);
+	});
+}
+
+//var sum = sum1;
+//var sum = sum2;
+var sum = sum3; // 안되는중
+console.log(sum(10));
+console.log(sum(10,20,30));
+console.log(sum(10,20,30,40,50));
+
+
+test();
+</script>
+</head>
+<body>
+	<h1>function 객체</h1>
+</body>
+</html>

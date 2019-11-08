@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+ DOM 이벤트 종류
+ 1. 마우스 
+ 2. 키보드 입력
+ 3. form & input
+ 4. touch
+ 
+ - 용어정리
+ 1. Event Name : load, click, mouseover
+ 2. Event Attribute : onload, onclick, onmouseover
+ 3. Event Listener (Event Handler) : function(event){.....}
+ 
+ - Event Model(EventName에 Event Listener를 연결하는 방법)
+ 1. DOM level 0
+ 	- Inline Event Model
+ 		ex)
+ 		<button onclick='js code' ...>
+ 		
+ 	- Basic Event Model
+ 		ex)
+ 		window.onload = function(){.....}	
+ 	- 단점
+ 		이벤트 핸들러를 한 개만 세팅할 수 있다는 것
+ 		
+ 2. DOM level 2 
+ 	- Microsoft Internet Explorer Event Model
+ 		ex)
+ 		el.attachEvent('click', function(){});
+ 		el.detachEvent('click');
+ 		
+ 	- Standard Event Model
+ 		ex)
+ 		el.addEventListener('click', function(){});
+ 		el.removeEventListener('click');
+
+ */
+
+ 
+ 
+</script>
+</head>
+<body>
+	<h1>JavaScript Event 처리1 - DOM Level 0, Inline 방식</h1>
+	<h2 onclick='console.log("clicked !")'>click1</h2>
+	<h2 onmouseover='this.innerText="mouseover";'
+	 	onmouseout='this.innerText="mouseout";'>mouseout</h2>
+</body>
+</html>

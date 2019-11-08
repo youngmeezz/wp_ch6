@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var s = '';
+for(key in location){
+	s += (key + ":" + location[key] + "\n");
+}
+console.log(s);
+
+//location 화면 갱신할 때 많이 사용
+</script>
+</head>
+<body>
+	<h1>BOM - location 객체</h1>
+	<!--  refresh 방법1 -->
+	<button onclick='location=location;'>refresh1</button>
+	
+	<!--  refresh 방법2 -->
+	<button onclick='location.href=location.href'>refresh2</button>
+	
+	<!--  refresh 방법3 -->
+	<button onclick='location.assign("");'>refresh3</button>
+	
+	<!--  refresh 방법4 -->
+	<button onclick='location.replace(location);'>refresh4</button>
+	
+	<!--  refresh 방법5 추천 캐시를 안쓰기 때문 CTRL+F5누른 효과 그냥 F5랑은 다름 -->
+	<button onclick='location.reload();'>refresh5</button>
+</body>
+</html>

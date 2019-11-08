@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+ DOM 이벤트 종류
+ 1. 마우스 
+ 2. 키보드 입력
+ 3. form & input
+ 4. touch
+ 
+ - 용어정리
+ 1. Event Name : load, click, mouseover
+ 2. Event Attribute : onload, onclick, onmouseover
+ 3. Event Listener (Event Handler) : function(event){.....}
+ 
+ - Event Model(EventName에 Event Listener를 연결하는 방법)
+ 1. DOM level 0
+ 	- Inline Event Model
+ 		ex)
+ 		<button onclick='js code' ...>
+ 		
+ 	- Basic Event Model
+ 		ex)
+ 		window.onload = function(){.....}	
+ 	- 단점
+ 		이벤트 핸들러를 한 개만 세팅할 수 있다는 것
+ 		
+ 2. DOM level 2 
+ 	- Microsoft Internet Explorer Event Model
+ 		ex)
+ 		el.attachEvent('click', function(){});
+ 		el.detachEvent('click');
+ 		
+ 	- Standard Event Model
+ 		ex)
+ 		el.addEventListener('click', function(){});
+ 		el.removeEventListener('click');
+
+ */
+
+ 
+ 
+</script>
+<script>
+window.onload = function(){
+	var button1 = document.getElementById("button-1");
+	var button2 = document.getElementById("button-2");
+	
+	button1.onclick = function(){
+		var counter1 = document.getElementById("counter-1");
+		var count = Number(counter1.innerText);
+		counter1.innerText =  "" + (count+1);
+	}
+	
+	button2.onclick = function(){
+		var counter1 = document.getElementById("counter-1");
+		var count = Number(counter1.innerText);
+		counter1.innerText =  "" + (count+1);
+	}
+}
+</script>
+</head>
+<body>
+	<h1>JavaScript Event 처리2 - DOM Level 0, JavaScript 방식</h1>
+	<button id = "button-1">button1</button>
+	<button id = "button-2">button2</button>
+	<p>counter1: <span id = 'counter-1'>0</span></p>
+</body>
+</html>

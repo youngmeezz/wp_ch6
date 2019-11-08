@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.onload = function(){
+	setTimeout(function(){
+		var headers = document.getElementsByTagName("h2");
+		
+		for(var i=0; i<headers.length;i++){
+			headers[i].innerText = 'by getElementByTagName()';
+		}
+
+	}, 2000);
+}
+</script>
+</head>
+<body>
+	<h1>문서 객체 선택하기(select)2</h1>
+   <h1>Header1</h1>
+   <h1>Header2</h1>
+   <h1>Header3</h1>
+   <h1>Header4</h1>
+</body>
+</html>

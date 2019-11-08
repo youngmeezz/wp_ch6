@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+이벤트 버블링 :
+	특정 엘리먼트에 이벤트가 발생했을 때, 해당 이벤트가 부모 엘리멘트들로 전달되어 가는 것.
+ie:
+	outer-div > inner-div > header > text
+others:
+	outer-div < inner-div < header < text
+	
+ */
+</script>
+<script>
+
+window.addEventListener('load',function(){
+	document.getElementById("outer-div").addEventListener('click', function(e){
+		console.log("outer-div");
+	});
+	
+	document.getElementById("inner-div").addEventListener('click', function(e){
+		
+		// cross browser
+		// e == null => < IE8(window.event)
+		var event = e || window.event;
+		
+		// 이벤트 버블링 막기
+		event.cancelBubble = true; // < IE8 이하에서 가능
+		event.stopPropagation && event.stopPropagation();
+		
+		console.log("inner-div");
+	});
+	
+	document.getElementById("header").addEventListener('click', function(e){
+		console.log("header");
+	});
+	
+	document.getElementById("text").addEventListener('click', function(e){
+		console.log("text");
+	});
+});
+
+</script>
+</head>
+<body>
+	<h1>이벤트 버블링(Event Propafation, Event Bubbling)</h1>
+	<h2>로그인하기</h2>
+	<div id="outer-div">
+		<div id="inner-div">
+			<h2 id="header">
+				<span id="text">Text!!!</span>
+			</h2>
+		</div>
+	</div>
+</body>
+</html>

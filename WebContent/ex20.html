@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="browser-detect.js"></script>
+<script>
+var s = '';
+for( var key in navigator){
+	s += (key + ":" + navigator[key] + "\n");
+}
+console.log(s);
+
+BrowserDetect.init();
+console.log(BrowserDetect.browser);
+console.log(BrowserDetect.version);
+console.log()
+</script>
+</head>
+<body>
+	<h1>BOM - navigator 객체</h1>
+</body>
+</html>

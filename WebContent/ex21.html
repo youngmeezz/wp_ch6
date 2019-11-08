@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* 용어정리
+ 1. 태그(Tag) 
+ 	-HTML문서 안에서 텍스트나 콘텐츠를 정의할 때 사용하는 마크업
+ 2. 문서 객체(Document Object Model) 도큐먼트 오브젝트의 모델 설계
+ 	- DOM(Document Object Model, Tree)
+ 	- 구성 요소는 HTML Element들이다. <html> ,<p>, <body>
+ 	- JS DOM은 document로 접근한다.
+ 3. 노드(Node)
+ 	- DOM Tree의 각각의 요소
+ 	- HTML Element를 가리킨다.
+ */
+ 
+ //jpa하는 방법
+ //query.string
+ 
+ // DOM loading되는 시점
+ window.onload = function(){
+ 		console.log(document.getElementById("header-1"));
+ 	}
+</script>
+
+<script>//alert('step-0')</script>
+</head>
+<body>
+<h1 id="header-1">step-1</h1>
+<script>//alert('step-2')</script>
+<h1>step-3</h1>
+<script>//alert('step-4')</script>
+</body>
+</html>
